@@ -1,0 +1,130 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', 'Roboto', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0f0f0f; 
+  color: #f2f2f2;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #1a1a1a, #2a2a2a);
+  color: #fff;
+  padding: 10px 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  color: #ff7efc; 
+}
+
+.back-button:active {
+  transform: scale(0.95);
+}
+
+.video-wrapper {
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.video-wrapper video {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  background-color: black;
+}
+
+#videoPlayer {
+  transition: opacity 0.4s ease;
+}
+
+#videoPlayer:not([controls])::-webkit-media-controls {
+  display: none !important;
+}
+
+#videoPlayer:not([controls]) {
+  opacity: 0.85;
+  cursor: none;
+}
+
+.detail-box {
+  padding: 18px;
+  background-color: #151515;
+}
+
+.info-table {
+  width: 94%;
+  margin-top: 0px;
+  margin-left: 10px;
+  border-collapse: collapse;
+  font-size: 14px;
+  background: #1c1c1c;
+  border: 1px solid #333;
+}
+
+.info-table td {
+  padding: 10px 12px;
+  border: 1px solid #333;
+  vertical-align: top;
+}
+
+.info-table td:first-child {
+  font-weight: bold;
+  color: #ccc;
+  width: 130px;
+}
+
+#toastMsg {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-40%);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9999;
+  pointer-events: none;
+  text-align: center;
+}
+
+#toastMsg.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+#toastMsg {
+  display: block !important;
+  z-index: 99999 !important;
+}
+
+@media (max-width: 600px) {
+  .detail-box {
+    padding: 12px;
+  }
+
+  .episode-scroll button {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .video-wrapper video {
+    max-width: 100%;
+    height: auto;
+  }
+}
