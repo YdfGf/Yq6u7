@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #222;
+  padding: 12px 15px;
+  border-bottom: 2px solid #444;
+}
+
+header h1 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.history-list a.history-item {
+  text-decoration: none;
+  color: #fff;
+}
+
+.history-item {
+  display: flex;
+  background-color: #2c2c2c;
+  overflow: hidden;
+  position: relative;
+  min-height: 80px;
+  border-bottom: 1px solid #333;
+}
+
+.history-item img {
+  width: 120px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  flex-shrink: 0;
+  background-color: #1a1a1a;
+}
+
+.history-info {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+}
+
+.history-info h3 {
+  font-size: 14px;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.history-info p {
+  font-size: 12px;
+  margin: 20px 0 0 0;
+  color: #bbb;
+}
+
+.remove-btn {
+  position: absolute;
+  bottom: 40px;
+  right: 8px;
+  background: crimson;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 6px;
+  cursor: pointer;
+  font-size: 11px;
+  z-index: 5;
+  transition: 0.2s ease;
+}
+
+.remove-btn:hover {
+  background: darkred;
+  transform: scale(1.05);
+}
+
+.center-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 70vh;
+  color: #bbb;
+  font-size: 1.05rem;
+}
+
+#peringatan-kode {
+  background: #ff4444;
+  color: #fff;
+  padding: 15px 20px;
+  margin: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255, 68, 68, 0.4);
+  animation: slideIn 0.5s ease;
+}
+
+#peringatan-kode strong {
+  display: block;
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+#peringatan-kode p {
+  margin: 5px 0 0;
+  font-size: 10px;
+  opacity: 0.9;
+}
+
+#peringatan-kode.hidden {
+  display: none !important;
+}
+
+.lock-blackout {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  color: #fff;
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
