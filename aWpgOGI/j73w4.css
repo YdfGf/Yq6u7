@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none !important;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background-color: #121212;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+a, a:visited, a:hover, a:active, a:focus {
+  text-decoration: none !important;
+  color: inherit !important;
+  outline: none;
+}
+
+.genre-nav {
+  background-color: #1a1a1a;
+  padding: 10px 0;
+  border-bottom: 1px solid #2c2c2c;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.genre-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0 10px;
+  scroll-behavior: smooth;
+  padding-bottom: 6px;
+}
+
+.genre-scroll::-webkit-scrollbar {
+  height: 5px;
+}
+
+.genre-scroll::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 6px;
+}
+
+.genre-scroll button {
+  flex: 0 0 auto;
+  background: #181818;
+  color: #eee;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.15s ease-in-out;
+}
+
+.genre-scroll button:hover {
+  background: #2b2b2b;
+}
+
+.genre-scroll button.active {
+  background: #ff007f;
+  border-color: #ff007f;
+  color: #fff;
+  box-shadow: 0 0 8px rgba(255, 0, 127, 0.4);
+}
+
+#genre-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  padding: 12px;
+}
+
+.genre-card {
+  display: block;
+  background: #1f1f1f;
+  overflow: hidden;
+  transform: translateY(10px);
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+#peringatan-kode {
+  background: #ff4444;
+  color: #fff;
+  padding: 15px 20px;
+  margin: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255, 68, 68, 0.4);
+  animation: slideIn 0.5s ease;
+}
+
+#peringatan-kode strong {
+  display: block;
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+#peringatan-kode p {
+  margin: 5px 0 0;
+  font-size: 10px;
+  opacity: 0.9;
+}
+
+#peringatan-kode.hidden {
+  display: none !important;
+}
+
+.lock-blackout {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  color: #fff;
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.genre-card img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-color: #111;
+  object-fit: cover;
+  display: block;
+}
+
+.genre-card h3 {
+  font-size: 13px;
+  margin: 6px 5px 2px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #eee;
+}
+
+.genre-card p {
+  font-size: 12px;
+  color: #aaa;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 600px) {
+  #genre-list {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  }
+  }
